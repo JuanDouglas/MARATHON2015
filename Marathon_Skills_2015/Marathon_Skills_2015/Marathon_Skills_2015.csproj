@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7B34716-99B6-49DF-A8B3-851727AE794E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Marathon_Skills_2015</RootNamespace>
+    <AssemblyName>Marathon_Skills_2015</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\test\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.1.3\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data_Folder\Charity.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\Country.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\C_Event.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\C_EventType.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\C_Role.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\C_User.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\DBMarathon.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMarathon.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\DBMarathon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\DBMarathon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMarathon.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\Gender.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\Marathon.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\Position.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\RaceKitOption.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\Registration.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\RegistrationEvent.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\RegistrationStatus.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\Runner.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\Sponsorship.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\sp_helpdiagrams_Result.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\Staff.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\sysdiagrams.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\Timesheet.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\Volunteer.cs">
+      <DependentUpon>DBMarathon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\About_Marathon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\About_Marathon.Designer.cs">
+      <DependentUpon>About_Marathon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Interactive_Map.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Interactive_Map.Designer.cs">
+      <DependentUpon>Interactive_Map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Main_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Main_Screen.Designer.cs">
+      <DependentUpon>Main_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Login\Login_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Login\Login_Screen.Designer.cs">
+      <DependentUpon>Login_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Login\Pos_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Login\Pos_Login.Designer.cs">
+      <DependentUpon>Pos_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Sponsor\Sponsor_Runner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Sponsor\Sponsor_Runner.Designer.cs">
+      <DependentUpon>Sponsor_Runner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="Forms\About_Marathon.resx">
+      <DependentUpon>About_Marathon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Interactive_Map.resx">
+      <DependentUpon>Interactive_Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Main_Screen.resx">
+      <DependentUpon>Main_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Login\Login_Screen.resx">
+      <DependentUpon>Login_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Login\Pos_Login.pt-BR.resx">
+      <DependentUpon>Pos_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Login\Pos_Login.resx">
+      <DependentUpon>Pos_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Sponsor\Sponsor_Runner.resx">
+      <DependentUpon>Sponsor_Runner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Test\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <EntityDeploy Include="Data_Folder\DBMarathon.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBMarathon.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data_Folder\DBMarathon.edmx.diagram">
+      <DependentUpon>DBMarathon.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconsCheckpoint\Anotação 2020-02-12 111443.png" />
+    <Content Include="Data_Folder\DBMarathon.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBMarathon.Context.cs</LastGenOutput>
+      <DependentUpon>DBMarathon.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data_Folder\DBMarathon.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBMarathon.edmx</DependentUpon>
+      <LastGenOutput>DBMarathon.cs</LastGenOutput>
+    </Content>
+    <Content Include="Images\IconsCheckpoint\map-icon-drinks.png" />
+    <Content Include="Images\IconsCheckpoint\map-icon-energy-bars.png" />
+    <Content Include="Images\IconsCheckpoint\map-icon-information.png" />
+    <Content Include="Images\IconsCheckpoint\map-icon-medical.png" />
+    <Content Include="Images\IconsCheckpoint\map-icon-start.png" />
+    <Content Include="Images\IconsCheckpoint\map-icon-toilets.png" />
+    <Content Include="Images\marathon-skills-2015-marathon-map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
