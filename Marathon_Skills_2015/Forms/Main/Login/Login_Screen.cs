@@ -22,7 +22,7 @@ namespace Marathon_Skills_2015.Forms
         public void Login(string email, string password)
         {
             var entities = new Data_Folder.MarathonSkillsEntities();
-            var whereResult = entities.C_User.First(x => x.Email == email);
+            var whereResult = entities.C_User.FirstOrDefault(x => x.Email == email);
             if (whereResult != null)
             {
                 if (whereResult.C_Password == password)
@@ -36,7 +36,7 @@ namespace Marathon_Skills_2015.Forms
             }
             else
             {
-                throw new Exception.LoginException("This user does not exist!");
+               // throw new Exception.LoginException("This user does not exist!");
             }
         }
         private void btnLogin_Click(object sender, EventArgs e)
@@ -103,8 +103,9 @@ namespace Marathon_Skills_2015.Forms
         {
             if (txtPassword.Text == null || txtPassword.Text == "")
             {
-                txtPassword.Text = "Enter your passsword";
+                txtPassword.Refresh();
                 txtPassword.UseSystemPasswordChar = false;
+                txtPassword.Text = "Enter your passsword";
                 txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             }
         }
