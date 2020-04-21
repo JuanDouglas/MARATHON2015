@@ -14,6 +14,13 @@ namespace Marathon_Skills_2015.Data_Folder
     
     public partial class Registration
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Registration()
+        {
+            this.RegistrationEvent = new HashSet<RegistrationEvent>();
+            this.Sponsorship = new HashSet<Sponsorship>();
+        }
+    
         public int RegistrationId { get; set; }
         public int RunnerId { get; set; }
         public System.DateTime RegistrationDateTime { get; set; }
@@ -22,5 +29,13 @@ namespace Marathon_Skills_2015.Data_Folder
         public decimal Cost { get; set; }
         public int CharityId { get; set; }
         public decimal SponsorshipTarget { get; set; }
+    
+        public virtual RaceKitOption RaceKitOption { get; set; }
+        public virtual RegistrationStatus RegistrationStatus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RegistrationEvent> RegistrationEvent { get; set; }
+        public virtual Runner Runner { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sponsorship> Sponsorship { get; set; }
     }
 }

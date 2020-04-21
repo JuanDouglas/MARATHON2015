@@ -51,7 +51,6 @@ namespace Marathon_Skills_2015.Forms
             }
 
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             Visible = false;

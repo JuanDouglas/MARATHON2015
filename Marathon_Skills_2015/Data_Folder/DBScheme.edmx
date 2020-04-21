@@ -9,10 +9,10 @@
           <Key>
             <PropertyRef Name="EventId" />
           </Key>
-          <Property Name="EventId" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="EventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EventName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="EventTypeId" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="MarathonId" Type="tinyint" Nullable="false" />
+          <Property Name="EventTypeId" Type="int" />
+          <Property Name="MarathonId" Type="int" />
           <Property Name="StartDateTime" Type="datetime" />
           <Property Name="Cost" Type="decimal" Precision="10" Scale="2" />
           <Property Name="MaxParticipants" Type="smallint" />
@@ -21,14 +21,14 @@
           <Key>
             <PropertyRef Name="EventTypeId" />
           </Key>
-          <Property Name="EventTypeId" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="EventTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EventTypeName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="_Role">
           <Key>
             <PropertyRef Name="RoleId" />
           </Key>
-          <Property Name="RoleId" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RoleName" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="_User">
@@ -39,7 +39,7 @@
           <Property Name="_Password" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="FirstName" Type="varchar" MaxLength="80" />
           <Property Name="LastName" Type="varchar" MaxLength="80" />
-          <Property Name="RoleId" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Charity">
           <Key>
@@ -68,7 +68,7 @@
           <Key>
             <PropertyRef Name="MarathonId" />
           </Key>
-          <Property Name="MarathonId" Type="tinyint" Nullable="false" />
+          <Property Name="MarathonId" Type="int" Nullable="false" />
           <Property Name="MarathonName" Type="varchar" MaxLength="80" Nullable="false" />
           <Property Name="CityName" Type="varchar" MaxLength="80" />
           <Property Name="CountryCode" Type="char" MaxLength="3" Nullable="false" />
@@ -110,7 +110,7 @@
           </Key>
           <Property Name="RegistrationEventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RegistrationId" Type="int" Nullable="false" />
-          <Property Name="EventId" Type="char" MaxLength="6" />
+          <Property Name="EventId" Type="int" />
           <Property Name="BibNumber" Type="smallint" />
           <Property Name="RaceTime" Type="int" />
         </EntityType>
@@ -125,19 +125,15 @@
           <Key>
             <PropertyRef Name="RunnerId" />
           </Key>
-          <Property Name="RunnerId" Type="int" Nullable="false" />
+          <Property Name="RunnerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Gender" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="DateOfBirth" Type="datetime" />
           <Property Name="CountryCode" Type="char" MaxLength="3" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Sponsorship">
           <Key>
             <PropertyRef Name="SponsorshipId" />
-            <PropertyRef Name="SponsorName" />
-            <PropertyRef Name="RegistrationId" />
           </Key>
           <Property Name="SponsorshipId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SponsorName" Type="varchar" MaxLength="150" Nullable="false" />
@@ -176,6 +172,162 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           <Property Name="CountryCode" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
+        <Association Name="FK___Event__EventTyp__2D27B809">
+          <End Role="_EventType" Type="Self._EventType" Multiplicity="0..1" />
+          <End Role="_Event" Type="Self._Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="_EventType">
+              <PropertyRef Name="EventTypeId" />
+            </Principal>
+            <Dependent Role="_Event">
+              <PropertyRef Name="EventTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK___Event__Marathon__2E1BDC42">
+          <End Role="Marathon" Type="Self.Marathon" Multiplicity="0..1" />
+          <End Role="_Event" Type="Self._Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marathon">
+              <PropertyRef Name="MarathonId" />
+            </Principal>
+            <Dependent Role="_Event">
+              <PropertyRef Name="MarathonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK___User__RoleId__45F365D3">
+          <End Role="_Role" Type="Self._Role" Multiplicity="1" />
+          <End Role="_User" Type="Self._User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="_Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="_User">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Marathon__Countr__286302EC">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Marathon" Type="Self.Marathon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryCode" />
+            </Principal>
+            <Dependent Role="Marathon">
+              <PropertyRef Name="CountryCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__Event__3E52440B">
+          <End Role="_Event" Type="Self._Event" Multiplicity="0..1" />
+          <End Role="RegistrationEvent" Type="Self.RegistrationEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="_Event">
+              <PropertyRef Name="EventId" />
+            </Principal>
+            <Dependent Role="RegistrationEvent">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__RaceK__398D8EEE">
+          <End Role="RaceKitOption" Type="Self.RaceKitOption" Multiplicity="1" />
+          <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceKitOption">
+              <PropertyRef Name="RaceKitOptionId" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="RaceKitOptionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__Regis__3A81B327">
+          <End Role="RegistrationStatus" Type="Self.RegistrationStatus" Multiplicity="1" />
+          <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegistrationStatus">
+              <PropertyRef Name="RegistrationStatusId" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="RegistrationStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__Regis__3D5E1FD2">
+          <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
+          <End Role="RegistrationEvent" Type="Self.RegistrationEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="RegistrationId" />
+            </Principal>
+            <Dependent Role="RegistrationEvent">
+              <PropertyRef Name="RegistrationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__Runne__38996AB5">
+          <End Role="Runner" Type="Self.Runner" Multiplicity="1" />
+          <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Runner">
+              <PropertyRef Name="RunnerId" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="RunnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sponsorsh__Regis__4316F928">
+          <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
+          <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="RegistrationId" />
+            </Principal>
+            <Dependent Role="Sponsorship">
+              <PropertyRef Name="RegistrationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__PositionI__4D94879B">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="PositionId" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="PositionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Timesheet__PayAm__5070F446">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Timesheet" Type="Self.Timesheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Timesheet">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Volunteer__Count__48CFD27E">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryCode" />
+            </Principal>
+            <Dependent Role="Volunteer">
+              <PropertyRef Name="CountryCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="MarathonSkillsModelStoreContainer">
           <EntitySet Name="_Event" EntityType="Self._Event" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="_EventType" EntityType="Self._EventType" Schema="dbo" store:Type="Tables" />
@@ -191,17 +343,62 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           <EntitySet Name="RegistrationEvent" EntityType="Self.RegistrationEvent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RegistrationStatus" EntityType="Self.RegistrationStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Runner" EntityType="Self.Runner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sponsorship" EntityType="Self.Sponsorship" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Timesheet" EntityType="Self.Timesheet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Sponsorship" EntityType="Self.Sponsorship" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Sponsorship].[SponsorshipId] AS [SponsorshipId], 
-    [Sponsorship].[SponsorName] AS [SponsorName], 
-    [Sponsorship].[RegistrationId] AS [RegistrationId], 
-    [Sponsorship].[Amount] AS [Amount]
-    FROM [dbo].[Sponsorship] AS [Sponsorship]</DefiningQuery>
-          </EntitySet>
+          <AssociationSet Name="FK___Event__EventTyp__2D27B809" Association="Self.FK___Event__EventTyp__2D27B809">
+            <End Role="_EventType" EntitySet="_EventType" />
+            <End Role="_Event" EntitySet="_Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK___Event__Marathon__2E1BDC42" Association="Self.FK___Event__Marathon__2E1BDC42">
+            <End Role="Marathon" EntitySet="Marathon" />
+            <End Role="_Event" EntitySet="_Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK___User__RoleId__45F365D3" Association="Self.FK___User__RoleId__45F365D3">
+            <End Role="_Role" EntitySet="_Role" />
+            <End Role="_User" EntitySet="_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Marathon__Countr__286302EC" Association="Self.FK__Marathon__Countr__286302EC">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Marathon" EntitySet="Marathon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__Event__3E52440B" Association="Self.FK__Registrat__Event__3E52440B">
+            <End Role="_Event" EntitySet="_Event" />
+            <End Role="RegistrationEvent" EntitySet="RegistrationEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__RaceK__398D8EEE" Association="Self.FK__Registrat__RaceK__398D8EEE">
+            <End Role="RaceKitOption" EntitySet="RaceKitOption" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__Regis__3A81B327" Association="Self.FK__Registrat__Regis__3A81B327">
+            <End Role="RegistrationStatus" EntitySet="RegistrationStatus" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__Regis__3D5E1FD2" Association="Self.FK__Registrat__Regis__3D5E1FD2">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="RegistrationEvent" EntitySet="RegistrationEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__Runne__38996AB5" Association="Self.FK__Registrat__Runne__38996AB5">
+            <End Role="Runner" EntitySet="Runner" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sponsorsh__Regis__4316F928" Association="Self.FK__Sponsorsh__Regis__4316F928">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__PositionI__4D94879B" Association="Self.FK__Staff__PositionI__4D94879B">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Timesheet__PayAm__5070F446" Association="Self.FK__Timesheet__PayAm__5070F446">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Timesheet" EntitySet="Timesheet" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Volunteer__Count__48CFD27E" Association="Self.FK__Volunteer__Count__48CFD27E">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Volunteer" EntitySet="Volunteer" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -212,27 +409,32 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           <Key>
             <PropertyRef Name="EventId" />
           </Key>
-          <Property Name="EventId" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="EventTypeId" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MarathonId" Type="Byte" Nullable="false" />
+          <Property Name="EventTypeId" Type="Int32" />
+          <Property Name="MarathonId" Type="Int32" />
           <Property Name="StartDateTime" Type="DateTime" Precision="3" />
           <Property Name="Cost" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="MaxParticipants" Type="Int16" />
+          <NavigationProperty Name="C_EventType" Relationship="Self.FK___Event__EventTyp__2D27B809" FromRole="C_Event" ToRole="C_EventType" />
+          <NavigationProperty Name="Marathon" Relationship="Self.FK___Event__Marathon__2E1BDC42" FromRole="C_Event" ToRole="Marathon" />
+          <NavigationProperty Name="RegistrationEvent" Relationship="Self.FK__Registrat__Event__3E52440B" FromRole="C_Event" ToRole="RegistrationEvent" />
         </EntityType>
         <EntityType Name="C_EventType">
           <Key>
             <PropertyRef Name="EventTypeId" />
           </Key>
-          <Property Name="EventTypeId" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="EventTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EventTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="C_Event" Relationship="Self.FK___Event__EventTyp__2D27B809" FromRole="C_EventType" ToRole="C_Event" />
         </EntityType>
         <EntityType Name="C_Role">
           <Key>
             <PropertyRef Name="RoleId" />
           </Key>
-          <Property Name="RoleId" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="C_User" Relationship="Self.FK___User__RoleId__45F365D3" FromRole="C_Role" ToRole="C_User" />
         </EntityType>
         <EntityType Name="C_User">
           <Key>
@@ -242,7 +444,8 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           <Property Name="C_Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FirstName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Name="LastName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="RoleId" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="C_Role" Relationship="Self.FK___User__RoleId__45F365D3" FromRole="C_User" ToRole="C_Role" />
         </EntityType>
         <EntityType Name="Charity">
           <Key>
@@ -260,6 +463,8 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           <Property Name="CountryCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="CountryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CountryFlag" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Marathon" Relationship="Self.FK__Marathon__Countr__286302EC" FromRole="Country" ToRole="Marathon" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK__Volunteer__Count__48CFD27E" FromRole="Country" ToRole="Volunteer" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -271,11 +476,13 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           <Key>
             <PropertyRef Name="MarathonId" />
           </Key>
-          <Property Name="MarathonId" Type="Byte" Nullable="false" />
+          <Property Name="MarathonId" Type="Int32" Nullable="false" />
           <Property Name="MarathonName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CityName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Name="CountryCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="YearHeld" Type="Int16" />
+          <NavigationProperty Name="C_Event" Relationship="Self.FK___Event__Marathon__2E1BDC42" FromRole="Marathon" ToRole="C_Event" />
+          <NavigationProperty Name="Country" Relationship="Self.FK__Marathon__Countr__286302EC" FromRole="Marathon" ToRole="Country" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
@@ -285,6 +492,7 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           <Property Name="PosintionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PositionDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="Payrate" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK__Staff__PositionI__4D94879B" FromRole="Position" ToRole="Staff" />
         </EntityType>
         <EntityType Name="RaceKitOption">
           <Key>
@@ -293,6 +501,7 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           <Property Name="RaceKitOptionId" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="RaceKitOption1" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RaceKitCoast" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Registration" Relationship="Self.FK__Registrat__RaceK__398D8EEE" FromRole="RaceKitOption" ToRole="Registration" />
         </EntityType>
         <EntityType Name="Registration">
           <Key>
@@ -306,6 +515,11 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           <Property Name="Cost" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="CharityId" Type="Int32" Nullable="false" />
           <Property Name="SponsorshipTarget" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="RaceKitOption" Relationship="Self.FK__Registrat__RaceK__398D8EEE" FromRole="Registration" ToRole="RaceKitOption" />
+          <NavigationProperty Name="RegistrationStatus" Relationship="Self.FK__Registrat__Regis__3A81B327" FromRole="Registration" ToRole="RegistrationStatus" />
+          <NavigationProperty Name="RegistrationEvent" Relationship="Self.FK__Registrat__Regis__3D5E1FD2" FromRole="Registration" ToRole="RegistrationEvent" />
+          <NavigationProperty Name="Runner" Relationship="Self.FK__Registrat__Runne__38996AB5" FromRole="Registration" ToRole="Runner" />
+          <NavigationProperty Name="Sponsorship" Relationship="Self.FK__Sponsorsh__Regis__4316F928" FromRole="Registration" ToRole="Sponsorship" />
         </EntityType>
         <EntityType Name="RegistrationEvent">
           <Key>
@@ -313,26 +527,40 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           </Key>
           <Property Name="RegistrationEventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RegistrationId" Type="Int32" Nullable="false" />
-          <Property Name="EventId" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="EventId" Type="Int32" />
           <Property Name="BibNumber" Type="Int16" />
           <Property Name="RaceTime" Type="Int32" />
+          <NavigationProperty Name="C_Event" Relationship="Self.FK__Registrat__Event__3E52440B" FromRole="RegistrationEvent" ToRole="C_Event" />
+          <NavigationProperty Name="Registration" Relationship="Self.FK__Registrat__Regis__3D5E1FD2" FromRole="RegistrationEvent" ToRole="Registration" />
         </EntityType>
-        <EntityType Name="RegistrationStatu">
+        <EntityType Name="RegistrationStatus">
           <Key>
             <PropertyRef Name="RegistrationStatusId" />
           </Key>
           <Property Name="RegistrationStatusId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RegistrationStatus" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegistrationStatus1" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Registration" Relationship="Self.FK__Registrat__Regis__3A81B327" FromRole="RegistrationStatus" ToRole="Registration" />
         </EntityType>
         <EntityType Name="Runner">
           <Key>
             <PropertyRef Name="RunnerId" />
           </Key>
-          <Property Name="RunnerId" Type="Int32" Nullable="false" />
+          <Property Name="RunnerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Gender" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
           <Property Name="CountryCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Registration" Relationship="Self.FK__Registrat__Runne__38996AB5" FromRole="Runner" ToRole="Registration" />
+        </EntityType>
+        <EntityType Name="Sponsorship">
+          <Key>
+            <PropertyRef Name="SponsorshipId" />
+          </Key>
+          <Property Name="SponsorshipId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SponsorName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegistrationId" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Registration" Relationship="Self.FK__Sponsorsh__Regis__4316F928" FromRole="Sponsorship" ToRole="Registration" />
         </EntityType>
         <EntityType Name="Staff">
           <Key>
@@ -345,6 +573,8 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PositionId" Type="Int16" Nullable="false" />
           <Property Name="Comments" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Position" Relationship="Self.FK__Staff__PositionI__4D94879B" FromRole="Staff" ToRole="Position" />
+          <NavigationProperty Name="Timesheet" Relationship="Self.FK__Timesheet__PayAm__5070F446" FromRole="Staff" ToRole="Timesheet" />
         </EntityType>
         <EntityType Name="Timesheet">
           <Key>
@@ -355,6 +585,7 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           <Property Name="StartDateTime" Type="DateTime" Precision="3" />
           <Property Name="EndDateTime" Type="DateTime" Precision="3" />
           <Property Name="PayAmount" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK__Timesheet__PayAm__5070F446" FromRole="Timesheet" ToRole="Staff" />
         </EntityType>
         <EntityType Name="Volunteer">
           <Key>
@@ -365,37 +596,235 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
           <Property Name="LastName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Name="CountryCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Country" Relationship="Self.FK__Volunteer__Count__48CFD27E" FromRole="Volunteer" ToRole="Country" />
         </EntityType>
-        <EntityType Name="Sponsorship">
-          <Key>
-            <PropertyRef Name="SponsorshipId" />
-            <PropertyRef Name="SponsorName" />
-            <PropertyRef Name="RegistrationId" />
-          </Key>
-          <Property Name="SponsorshipId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SponsorName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="RegistrationId" Type="Int32" Nullable="false" />
-          <Property Name="Amount" Type="Decimal" Precision="10" Scale="2" />
-        </EntityType>
+        <Association Name="FK___Event__EventTyp__2D27B809">
+          <End Role="C_EventType" Type="Self.C_EventType" Multiplicity="0..1" />
+          <End Role="C_Event" Type="Self.C_Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="C_EventType">
+              <PropertyRef Name="EventTypeId" />
+            </Principal>
+            <Dependent Role="C_Event">
+              <PropertyRef Name="EventTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK___Event__Marathon__2E1BDC42">
+          <End Role="Marathon" Type="Self.Marathon" Multiplicity="0..1" />
+          <End Role="C_Event" Type="Self.C_Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marathon">
+              <PropertyRef Name="MarathonId" />
+            </Principal>
+            <Dependent Role="C_Event">
+              <PropertyRef Name="MarathonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__Event__3E52440B">
+          <End Role="C_Event" Type="Self.C_Event" Multiplicity="0..1" />
+          <End Role="RegistrationEvent" Type="Self.RegistrationEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="C_Event">
+              <PropertyRef Name="EventId" />
+            </Principal>
+            <Dependent Role="RegistrationEvent">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK___User__RoleId__45F365D3">
+          <End Role="C_Role" Type="Self.C_Role" Multiplicity="1" />
+          <End Role="C_User" Type="Self.C_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="C_Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="C_User">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Marathon__Countr__286302EC">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Marathon" Type="Self.Marathon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryCode" />
+            </Principal>
+            <Dependent Role="Marathon">
+              <PropertyRef Name="CountryCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Volunteer__Count__48CFD27E">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryCode" />
+            </Principal>
+            <Dependent Role="Volunteer">
+              <PropertyRef Name="CountryCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__PositionI__4D94879B">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="PositionId" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="PositionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__RaceK__398D8EEE">
+          <End Role="RaceKitOption" Type="Self.RaceKitOption" Multiplicity="1" />
+          <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceKitOption">
+              <PropertyRef Name="RaceKitOptionId" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="RaceKitOptionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__Regis__3A81B327">
+          <End Role="RegistrationStatus" Type="Self.RegistrationStatus" Multiplicity="1" />
+          <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegistrationStatus">
+              <PropertyRef Name="RegistrationStatusId" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="RegistrationStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__Regis__3D5E1FD2">
+          <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
+          <End Role="RegistrationEvent" Type="Self.RegistrationEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="RegistrationId" />
+            </Principal>
+            <Dependent Role="RegistrationEvent">
+              <PropertyRef Name="RegistrationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__Runne__38996AB5">
+          <End Role="Runner" Type="Self.Runner" Multiplicity="1" />
+          <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Runner">
+              <PropertyRef Name="RunnerId" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="RunnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sponsorsh__Regis__4316F928">
+          <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
+          <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="RegistrationId" />
+            </Principal>
+            <Dependent Role="Sponsorship">
+              <PropertyRef Name="RegistrationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Timesheet__PayAm__5070F446">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Timesheet" Type="Self.Timesheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Timesheet">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="MarathonSkillsEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="C_Event" EntityType="Self.C_Event" />
           <EntitySet Name="C_EventType" EntityType="Self.C_EventType" />
           <EntitySet Name="C_Role" EntityType="Self.C_Role" />
           <EntitySet Name="C_User" EntityType="Self.C_User" />
-          <EntitySet Name="Charities" EntityType="Self.Charity" />
-          <EntitySet Name="Countries" EntityType="Self.Country" />
-          <EntitySet Name="Genders" EntityType="Self.Gender" />
-          <EntitySet Name="Marathons" EntityType="Self.Marathon" />
-          <EntitySet Name="Positions" EntityType="Self.Position" />
-          <EntitySet Name="RaceKitOptions" EntityType="Self.RaceKitOption" />
-          <EntitySet Name="Registrations" EntityType="Self.Registration" />
-          <EntitySet Name="RegistrationEvents" EntityType="Self.RegistrationEvent" />
-          <EntitySet Name="RegistrationStatus" EntityType="Self.RegistrationStatu" />
-          <EntitySet Name="Runners" EntityType="Self.Runner" />
-          <EntitySet Name="Staffs" EntityType="Self.Staff" />
-          <EntitySet Name="Timesheets" EntityType="Self.Timesheet" />
-          <EntitySet Name="Volunteers" EntityType="Self.Volunteer" />
-          <EntitySet Name="Sponsorships" EntityType="Self.Sponsorship" />
+          <EntitySet Name="Charity" EntityType="Self.Charity" />
+          <EntitySet Name="Country" EntityType="Self.Country" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" />
+          <EntitySet Name="Marathon" EntityType="Self.Marathon" />
+          <EntitySet Name="Position" EntityType="Self.Position" />
+          <EntitySet Name="RaceKitOption" EntityType="Self.RaceKitOption" />
+          <EntitySet Name="Registration" EntityType="Self.Registration" />
+          <EntitySet Name="RegistrationEvent" EntityType="Self.RegistrationEvent" />
+          <EntitySet Name="RegistrationStatus" EntityType="Self.RegistrationStatus" />
+          <EntitySet Name="Runner" EntityType="Self.Runner" />
+          <EntitySet Name="Sponsorship" EntityType="Self.Sponsorship" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" />
+          <EntitySet Name="Timesheet" EntityType="Self.Timesheet" />
+          <EntitySet Name="Volunteer" EntityType="Self.Volunteer" />
+          <AssociationSet Name="FK___Event__EventTyp__2D27B809" Association="Self.FK___Event__EventTyp__2D27B809">
+            <End Role="C_EventType" EntitySet="C_EventType" />
+            <End Role="C_Event" EntitySet="C_Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK___Event__Marathon__2E1BDC42" Association="Self.FK___Event__Marathon__2E1BDC42">
+            <End Role="Marathon" EntitySet="Marathon" />
+            <End Role="C_Event" EntitySet="C_Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__Event__3E52440B" Association="Self.FK__Registrat__Event__3E52440B">
+            <End Role="C_Event" EntitySet="C_Event" />
+            <End Role="RegistrationEvent" EntitySet="RegistrationEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK___User__RoleId__45F365D3" Association="Self.FK___User__RoleId__45F365D3">
+            <End Role="C_Role" EntitySet="C_Role" />
+            <End Role="C_User" EntitySet="C_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Marathon__Countr__286302EC" Association="Self.FK__Marathon__Countr__286302EC">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Marathon" EntitySet="Marathon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Volunteer__Count__48CFD27E" Association="Self.FK__Volunteer__Count__48CFD27E">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Volunteer" EntitySet="Volunteer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__PositionI__4D94879B" Association="Self.FK__Staff__PositionI__4D94879B">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__RaceK__398D8EEE" Association="Self.FK__Registrat__RaceK__398D8EEE">
+            <End Role="RaceKitOption" EntitySet="RaceKitOption" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__Regis__3A81B327" Association="Self.FK__Registrat__Regis__3A81B327">
+            <End Role="RegistrationStatus" EntitySet="RegistrationStatus" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__Regis__3D5E1FD2" Association="Self.FK__Registrat__Regis__3D5E1FD2">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="RegistrationEvent" EntitySet="RegistrationEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__Runne__38996AB5" Association="Self.FK__Registrat__Runne__38996AB5">
+            <End Role="Runner" EntitySet="Runner" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sponsorsh__Regis__4316F928" Association="Self.FK__Sponsorsh__Regis__4316F928">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Timesheet__PayAm__5070F446" Association="Self.FK__Timesheet__PayAm__5070F446">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Timesheet" EntitySet="Timesheet" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -443,7 +872,7 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Charities">
+          <EntitySetMapping Name="Charity">
             <EntityTypeMapping TypeName="MarathonSkillsModel.Charity">
               <MappingFragment StoreEntitySet="Charity">
                 <ScalarProperty Name="CharityId" ColumnName="CharityId" />
@@ -453,7 +882,7 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Countries">
+          <EntitySetMapping Name="Country">
             <EntityTypeMapping TypeName="MarathonSkillsModel.Country">
               <MappingFragment StoreEntitySet="Country">
                 <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
@@ -462,14 +891,14 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Genders">
+          <EntitySetMapping Name="Gender">
             <EntityTypeMapping TypeName="MarathonSkillsModel.Gender">
               <MappingFragment StoreEntitySet="Gender">
                 <ScalarProperty Name="Gender1" ColumnName="Gender" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Marathons">
+          <EntitySetMapping Name="Marathon">
             <EntityTypeMapping TypeName="MarathonSkillsModel.Marathon">
               <MappingFragment StoreEntitySet="Marathon">
                 <ScalarProperty Name="MarathonId" ColumnName="MarathonId" />
@@ -480,7 +909,7 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Positions">
+          <EntitySetMapping Name="Position">
             <EntityTypeMapping TypeName="MarathonSkillsModel.Position">
               <MappingFragment StoreEntitySet="Position">
                 <ScalarProperty Name="PositionId" ColumnName="PositionId" />
@@ -490,7 +919,7 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="RaceKitOptions">
+          <EntitySetMapping Name="RaceKitOption">
             <EntityTypeMapping TypeName="MarathonSkillsModel.RaceKitOption">
               <MappingFragment StoreEntitySet="RaceKitOption">
                 <ScalarProperty Name="RaceKitOptionId" ColumnName="RaceKitOptionId" />
@@ -499,7 +928,7 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Registrations">
+          <EntitySetMapping Name="Registration">
             <EntityTypeMapping TypeName="MarathonSkillsModel.Registration">
               <MappingFragment StoreEntitySet="Registration">
                 <ScalarProperty Name="RegistrationId" ColumnName="RegistrationId" />
@@ -513,7 +942,7 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="RegistrationEvents">
+          <EntitySetMapping Name="RegistrationEvent">
             <EntityTypeMapping TypeName="MarathonSkillsModel.RegistrationEvent">
               <MappingFragment StoreEntitySet="RegistrationEvent">
                 <ScalarProperty Name="RegistrationEventId" ColumnName="RegistrationEventId" />
@@ -525,14 +954,14 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RegistrationStatus">
-            <EntityTypeMapping TypeName="MarathonSkillsModel.RegistrationStatu">
+            <EntityTypeMapping TypeName="MarathonSkillsModel.RegistrationStatus">
               <MappingFragment StoreEntitySet="RegistrationStatus">
                 <ScalarProperty Name="RegistrationStatusId" ColumnName="RegistrationStatusId" />
-                <ScalarProperty Name="RegistrationStatus" ColumnName="RegistrationStatus" />
+                <ScalarProperty Name="RegistrationStatus1" ColumnName="RegistrationStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Runners">
+          <EntitySetMapping Name="Runner">
             <EntityTypeMapping TypeName="MarathonSkillsModel.Runner">
               <MappingFragment StoreEntitySet="Runner">
                 <ScalarProperty Name="RunnerId" ColumnName="RunnerId" />
@@ -543,7 +972,17 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Staffs">
+          <EntitySetMapping Name="Sponsorship">
+            <EntityTypeMapping TypeName="MarathonSkillsModel.Sponsorship">
+              <MappingFragment StoreEntitySet="Sponsorship">
+                <ScalarProperty Name="SponsorshipId" ColumnName="SponsorshipId" />
+                <ScalarProperty Name="SponsorName" ColumnName="SponsorName" />
+                <ScalarProperty Name="RegistrationId" ColumnName="RegistrationId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staff">
             <EntityTypeMapping TypeName="MarathonSkillsModel.Staff">
               <MappingFragment StoreEntitySet="Staff">
                 <ScalarProperty Name="StaffId" ColumnName="StaffId" />
@@ -556,7 +995,7 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Timesheets">
+          <EntitySetMapping Name="Timesheet">
             <EntityTypeMapping TypeName="MarathonSkillsModel.Timesheet">
               <MappingFragment StoreEntitySet="Timesheet">
                 <ScalarProperty Name="TimesheetId" ColumnName="TimesheetId" />
@@ -567,7 +1006,7 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Volunteers">
+          <EntitySetMapping Name="Volunteer">
             <EntityTypeMapping TypeName="MarathonSkillsModel.Volunteer">
               <MappingFragment StoreEntitySet="Volunteer">
                 <ScalarProperty Name="VolunterId" ColumnName="VolunterId" />
@@ -575,16 +1014,6 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Sponsorships">
-            <EntityTypeMapping TypeName="MarathonSkillsModel.Sponsorship">
-              <MappingFragment StoreEntitySet="Sponsorship">
-                <ScalarProperty Name="SponsorshipId" ColumnName="SponsorshipId" />
-                <ScalarProperty Name="SponsorName" ColumnName="SponsorName" />
-                <ScalarProperty Name="RegistrationId" ColumnName="RegistrationId" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -602,7 +1031,7 @@ warning 6002: The table/view 'MarathonSkills.dbo.Sponsorship' does not have a pr
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

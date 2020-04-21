@@ -14,7 +14,16 @@ namespace Marathon_Skills_2015.Data_Folder
     
     public partial class C_Role
     {
-        public string RoleId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public C_Role()
+        {
+            this.C_User = new HashSet<C_User>();
+        }
+    
+        public int RoleId { get; set; }
         public string RoleName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<C_User> C_User { get; set; }
     }
 }

@@ -19,5 +19,7 @@ namespace Marathon_Skills_2015.Data_Folder
         public Nullable<System.DateTime> StartDateTime { get; set; }
         public Nullable<System.DateTime> EndDateTime { get; set; }
         public Nullable<decimal> PayAmount { get; set; }
+    
+        public virtual Staff Staff { get; set; }
     }
 }

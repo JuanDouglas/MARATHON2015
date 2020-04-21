@@ -18,6 +18,8 @@ namespace Marathon_Skills_2015.Data_Folder
         public string C_Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string RoleId { get; set; }
+        public int RoleId { get; set; }
+    
+        public virtual C_Role C_Role { get; set; }
     }
 }

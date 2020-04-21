@@ -14,10 +14,20 @@ namespace Marathon_Skills_2015.Data_Folder
     
     public partial class Marathon
     {
-        public byte MarathonId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Marathon()
+        {
+            this.C_Event = new HashSet<C_Event>();
+        }
+    
+        public int MarathonId { get; set; }
         public string MarathonName { get; set; }
         public string CityName { get; set; }
         public string CountryCode { get; set; }
         public Nullable<short> YearHeld { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<C_Event> C_Event { get; set; }
+        public virtual Country Country { get; set; }
     }
 }

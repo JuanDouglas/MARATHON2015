@@ -16,8 +16,11 @@ namespace Marathon_Skills_2015.Data_Folder
     {
         public int RegistrationEventId { get; set; }
         public int RegistrationId { get; set; }
-        public string EventId { get; set; }
+        public Nullable<int> EventId { get; set; }
         public Nullable<short> BibNumber { get; set; }
         public Nullable<int> RaceTime { get; set; }
+    
+        public virtual C_Event C_Event { get; set; }
+        public virtual Registration Registration { get; set; }
     }
 }

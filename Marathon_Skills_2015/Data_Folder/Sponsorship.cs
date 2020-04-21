@@ -18,5 +18,7 @@ namespace Marathon_Skills_2015.Data_Folder
         public string SponsorName { get; set; }
         public int RegistrationId { get; set; }
         public Nullable<decimal> Amount { get; set; }
+    
+        public virtual Registration Registration { get; set; }
     }
 }

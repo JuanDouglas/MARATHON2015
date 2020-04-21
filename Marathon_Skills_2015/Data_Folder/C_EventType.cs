@@ -14,7 +14,16 @@ namespace Marathon_Skills_2015.Data_Folder
     
     public partial class C_EventType
     {
-        public string EventTypeId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public C_EventType()
+        {
+            this.C_Event = new HashSet<C_Event>();
+        }
+    
+        public int EventTypeId { get; set; }
         public string EventTypeName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<C_Event> C_Event { get; set; }
     }
 }

@@ -14,8 +14,17 @@ namespace Marathon_Skills_2015.Data_Folder
     
     public partial class RaceKitOption
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public RaceKitOption()
+        {
+            this.Registration = new HashSet<Registration>();
+        }
+    
         public string RaceKitOptionId { get; set; }
         public string RaceKitOption1 { get; set; }
         public decimal RaceKitCoast { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Registration> Registration { get; set; }
     }
 }
