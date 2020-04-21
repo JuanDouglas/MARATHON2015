@@ -34,6 +34,15 @@
             this.lblLoginForm = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCreditCard = new System.Windows.Forms.TextBox();
+            this.textCardHolder = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -45,15 +54,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.textCardHolder = new System.Windows.Forms.TextBox();
-            this.txtCreditCard = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.PainelSuperior.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -141,8 +141,101 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 64);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 546);
+            this.panel2.Size = new System.Drawing.Size(800, 523);
             this.panel2.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(713, 177);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(21, 33);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "i";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(498, 182);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(209, 25);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Save The Cats Fund";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(554, 145);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 25);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Charity";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.textBox1.Location = new System.Drawing.Point(238, 344);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(47, 26);
+            this.textBox1.TabIndex = 25;
+            this.textBox1.Text = "2017";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.textBox4.Location = new System.Drawing.Point(203, 381);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(207, 26);
+            this.textBox4.TabIndex = 24;
+            this.textBox4.Text = "Enter your email adress";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.textBox3.Location = new System.Drawing.Point(203, 344);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(29, 26);
+            this.textBox3.TabIndex = 23;
+            this.textBox3.Text = "01";
+            // 
+            // txtCreditCard
+            // 
+            this.txtCreditCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCreditCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtCreditCard.Location = new System.Drawing.Point(203, 306);
+            this.txtCreditCard.Name = "txtCreditCard";
+            this.txtCreditCard.Size = new System.Drawing.Size(207, 26);
+            this.txtCreditCard.TabIndex = 22;
+            this.txtCreditCard.Text = "1234 1234 1234 1234";
+            // 
+            // textCardHolder
+            // 
+            this.textCardHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCardHolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.textCardHolder.Location = new System.Drawing.Point(203, 270);
+            this.textCardHolder.Name = "textCardHolder";
+            this.textCardHolder.Size = new System.Drawing.Size(207, 26);
+            this.textCardHolder.TabIndex = 21;
+            this.textCardHolder.Text = "Credit card holder";
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtName.Location = new System.Drawing.Point(203, 194);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(207, 26);
+            this.txtName.TabIndex = 20;
+            this.txtName.Text = "Your name";
             // 
             // comboBox1
             // 
@@ -158,7 +251,7 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 511);
+            this.panel1.Location = new System.Drawing.Point(0, 488);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 35);
             this.panel1.TabIndex = 17;
@@ -253,104 +346,11 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Sponsorship details";
             // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txtName.Location = new System.Drawing.Point(203, 194);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(207, 26);
-            this.txtName.TabIndex = 20;
-            this.txtName.Text = "Your name";
-            // 
-            // textCardHolder
-            // 
-            this.textCardHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCardHolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.textCardHolder.Location = new System.Drawing.Point(203, 270);
-            this.textCardHolder.Name = "textCardHolder";
-            this.textCardHolder.Size = new System.Drawing.Size(207, 26);
-            this.textCardHolder.TabIndex = 21;
-            this.textCardHolder.Text = "Credit card holder";
-            // 
-            // txtCreditCard
-            // 
-            this.txtCreditCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCreditCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txtCreditCard.Location = new System.Drawing.Point(203, 306);
-            this.txtCreditCard.Name = "txtCreditCard";
-            this.txtCreditCard.Size = new System.Drawing.Size(207, 26);
-            this.txtCreditCard.TabIndex = 22;
-            this.txtCreditCard.Text = "1234 1234 1234 1234";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.textBox3.Location = new System.Drawing.Point(203, 344);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(29, 26);
-            this.textBox3.TabIndex = 23;
-            this.textBox3.Text = "01";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.textBox4.Location = new System.Drawing.Point(203, 381);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(207, 26);
-            this.textBox4.TabIndex = 24;
-            this.textBox4.Text = "Enter your email adress";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.textBox1.Location = new System.Drawing.Point(238, 344);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(47, 26);
-            this.textBox1.TabIndex = 25;
-            this.textBox1.Text = "2017";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(554, 145);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 25);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Charity";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(498, 182);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(209, 25);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Save The Cats Fund";
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(713, 177);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(21, 33);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "i";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Sponsor_Runner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 610);
+            this.ClientSize = new System.Drawing.Size(800, 587);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PainelSuperior);
             this.Name = "Sponsor_Runner";

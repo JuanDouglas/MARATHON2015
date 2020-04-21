@@ -15,7 +15,7 @@ namespace Marathon_Skills_2015
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ());
+            Application.Run(new Main_Screen());
         }
     }
 }

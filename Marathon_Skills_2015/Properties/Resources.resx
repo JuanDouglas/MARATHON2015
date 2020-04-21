@@ -121,6 +121,9 @@
   <data name="Anotação_2020_02_12_111443" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\IconsCheckpoint\Anotação 2020-02-12 111443.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Imagem_Transparente_lisis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagem Transparente lisis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="map_icon_drinks" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\IconsCheckpoint\map-icon-drinks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

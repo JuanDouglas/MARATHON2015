@@ -289,6 +289,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Imagem Transparente lisis.png" />
     <None Include="Images\IconsCheckpoint\Anotação 2020-02-12 111443.png" />
     <Content Include="Data_Folder\DBMarathon.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

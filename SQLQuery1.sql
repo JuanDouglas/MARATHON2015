@@ -2,14 +2,14 @@ USE master;
 GO
  CREATE DATABASE MarathonSkills ON(
  NAME = Marathon_Skills,
- FILENAME = 'C:\MarathonSkills2015\MarathonSkills.mdf',
+ FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\MarathonSkills.mdf',
  SIZE = 50mb,
  MAXSIZE = 300MB,
  FILEGROWTH = 15mb
  )
  LOG ON (
  NAME = Marathon_SkillsLOG,
- FILENAME = 'C:\MarathonSkills2015\MarathonSkillsLog.ldf',
+ FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\MarathonSkillsLog.ldf',
  SIZE = 5mb,
  MAXSIZE = 50mb,
  FILEGROWTH = 1mb

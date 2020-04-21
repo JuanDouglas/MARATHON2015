@@ -94,6 +94,17 @@
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
+            this.pictureBox34 = new System.Windows.Forms.PictureBox();
+            this.pictureBox33 = new System.Windows.Forms.PictureBox();
+            this.pictureBox32 = new System.Windows.Forms.PictureBox();
+            this.picPoint8 = new System.Windows.Forms.PictureBox();
+            this.picPoint7 = new System.Windows.Forms.PictureBox();
+            this.picPoint6 = new System.Windows.Forms.PictureBox();
+            this.picPoint5 = new System.Windows.Forms.PictureBox();
+            this.picPoint4 = new System.Windows.Forms.PictureBox();
+            this.picPoint3 = new System.Windows.Forms.PictureBox();
+            this.picPoint2 = new System.Windows.Forms.PictureBox();
+            this.picPoint1 = new System.Windows.Forms.PictureBox();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.pictureBox29 = new System.Windows.Forms.PictureBox();
@@ -125,18 +136,10 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picDrink = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox32 = new System.Windows.Forms.PictureBox();
-            this.pictureBox33 = new System.Windows.Forms.PictureBox();
-            this.pictureBox34 = new System.Windows.Forms.PictureBox();
-            this.picPoint7 = new System.Windows.Forms.PictureBox();
-            this.picPoint6 = new System.Windows.Forms.PictureBox();
-            this.picPoint5 = new System.Windows.Forms.PictureBox();
-            this.picPoint4 = new System.Windows.Forms.PictureBox();
-            this.picPoint3 = new System.Windows.Forms.PictureBox();
-            this.picPoint1 = new System.Windows.Forms.PictureBox();
-            this.picPoint8 = new System.Windows.Forms.PictureBox();
-            this.picPoint2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
             this.PainelSuperior.SuspendLayout();
             this.panelCheck1.SuspendLayout();
             this.panelCheck2.SuspendLayout();
@@ -146,6 +149,17 @@
             this.panelCheck6.SuspendLayout();
             this.panelCheck7.SuspendLayout();
             this.panelCheck8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
@@ -177,18 +191,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDrink)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint2)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PainelSuperior
@@ -1015,6 +1019,132 @@
             this.label45.TabIndex = 0;
             this.label45.Text = "Checkpoint 8";
             // 
+            // pictureBox34
+            // 
+            this.pictureBox34.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox34.Image = global::Marathon_Skills_2015.Properties.Resources.map_icon_start;
+            this.pictureBox34.Location = new System.Drawing.Point(247, 336);
+            this.pictureBox34.Name = "pictureBox34";
+            this.pictureBox34.Size = new System.Drawing.Size(67, 62);
+            this.pictureBox34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox34.TabIndex = 22;
+            this.pictureBox34.TabStop = false;
+            // 
+            // pictureBox33
+            // 
+            this.pictureBox33.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox33.Image = global::Marathon_Skills_2015.Properties.Resources.map_icon_start;
+            this.pictureBox33.Location = new System.Drawing.Point(32, 153);
+            this.pictureBox33.Name = "pictureBox33";
+            this.pictureBox33.Size = new System.Drawing.Size(67, 62);
+            this.pictureBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox33.TabIndex = 21;
+            this.pictureBox33.TabStop = false;
+            // 
+            // pictureBox32
+            // 
+            this.pictureBox32.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox32.Image = global::Marathon_Skills_2015.Properties.Resources.map_icon_start;
+            this.pictureBox32.Location = new System.Drawing.Point(145, 19);
+            this.pictureBox32.Name = "pictureBox32";
+            this.pictureBox32.Size = new System.Drawing.Size(68, 61);
+            this.pictureBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox32.TabIndex = 20;
+            this.pictureBox32.TabStop = false;
+            // 
+            // picPoint8
+            // 
+            this.picPoint8.BackColor = System.Drawing.Color.Transparent;
+            this.picPoint8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picPoint8.Location = new System.Drawing.Point(43, 119);
+            this.picPoint8.Name = "picPoint8";
+            this.picPoint8.Size = new System.Drawing.Size(43, 39);
+            this.picPoint8.TabIndex = 19;
+            this.picPoint8.TabStop = false;
+            this.picPoint8.Click += new System.EventHandler(this.picPoint_Click);
+            // 
+            // picPoint7
+            // 
+            this.picPoint7.BackColor = System.Drawing.Color.Transparent;
+            this.picPoint7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picPoint7.Location = new System.Drawing.Point(56, 237);
+            this.picPoint7.Name = "picPoint7";
+            this.picPoint7.Size = new System.Drawing.Size(43, 39);
+            this.picPoint7.TabIndex = 18;
+            this.picPoint7.TabStop = false;
+            this.picPoint7.Click += new System.EventHandler(this.picPoint_Click);
+            // 
+            // picPoint6
+            // 
+            this.picPoint6.BackColor = System.Drawing.Color.Transparent;
+            this.picPoint6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picPoint6.Location = new System.Drawing.Point(95, 301);
+            this.picPoint6.Name = "picPoint6";
+            this.picPoint6.Size = new System.Drawing.Size(43, 39);
+            this.picPoint6.TabIndex = 17;
+            this.picPoint6.TabStop = false;
+            this.picPoint6.Click += new System.EventHandler(this.picPoint_Click);
+            // 
+            // picPoint5
+            // 
+            this.picPoint5.BackColor = System.Drawing.Color.Transparent;
+            this.picPoint5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picPoint5.Location = new System.Drawing.Point(211, 344);
+            this.picPoint5.Name = "picPoint5";
+            this.picPoint5.Size = new System.Drawing.Size(43, 39);
+            this.picPoint5.TabIndex = 16;
+            this.picPoint5.TabStop = false;
+            this.picPoint5.Click += new System.EventHandler(this.picPoint_Click);
+            // 
+            // picPoint4
+            // 
+            this.picPoint4.BackColor = System.Drawing.Color.Transparent;
+            this.picPoint4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picPoint4.Location = new System.Drawing.Point(368, 286);
+            this.picPoint4.Name = "picPoint4";
+            this.picPoint4.Size = new System.Drawing.Size(43, 39);
+            this.picPoint4.TabIndex = 15;
+            this.picPoint4.TabStop = false;
+            this.picPoint4.Click += new System.EventHandler(this.picPoint_Click);
+            // 
+            // picPoint3
+            // 
+            this.picPoint3.BackColor = System.Drawing.Color.Transparent;
+            this.picPoint3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picPoint3.Location = new System.Drawing.Point(271, 203);
+            this.picPoint3.Name = "picPoint3";
+            this.picPoint3.Size = new System.Drawing.Size(43, 39);
+            this.picPoint3.TabIndex = 14;
+            this.picPoint3.TabStop = false;
+            this.picPoint3.Click += new System.EventHandler(this.picPoint_Click);
+            // 
+            // picPoint2
+            // 
+            this.picPoint2.BackColor = System.Drawing.Color.Transparent;
+            this.picPoint2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picPoint2.Location = new System.Drawing.Point(280, 119);
+            this.picPoint2.Name = "picPoint2";
+            this.picPoint2.Size = new System.Drawing.Size(43, 39);
+            this.picPoint2.TabIndex = 13;
+            this.picPoint2.TabStop = false;
+            this.picPoint2.Click += new System.EventHandler(this.picPoint_Click);
+            // 
+            // picPoint1
+            // 
+            this.picPoint1.BackColor = System.Drawing.Color.Transparent;
+            this.picPoint1.BackgroundImage = global::Marathon_Skills_2015.Properties.Resources.Imagem_Transparente_lisis;
+            this.picPoint1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picPoint1.Image = global::Marathon_Skills_2015.Properties.Resources.Imagem_Transparente_lisis;
+            this.picPoint1.Location = new System.Drawing.Point(240, 9);
+            this.picPoint1.Name = "picPoint1";
+            this.picPoint1.Size = new System.Drawing.Size(43, 39);
+            this.picPoint1.TabIndex = 12;
+            this.picPoint1.TabStop = false;
+            this.picPoint1.Click += new System.EventHandler(this.picPoint_Click);
+            // 
             // pictureBox27
             // 
             this.pictureBox27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -1356,147 +1486,65 @@
             this.picDrink.TabIndex = 7;
             this.picDrink.TabStop = false;
             // 
-            // pictureBox1
+            // panel1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Marathon_Skills_2015.Properties.Resources.Anotação_2020_02_12_111443;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(470, 465);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.panel1.BackgroundImage = global::Marathon_Skills_2015.Properties.Resources.Anotação_2020_02_12_111443;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.pictureBox32);
+            this.panel1.Controls.Add(this.picPoint3);
+            this.panel1.Controls.Add(this.picPoint4);
+            this.panel1.Controls.Add(this.picPoint2);
+            this.panel1.Controls.Add(this.pictureBox34);
+            this.panel1.Controls.Add(this.picPoint1);
+            this.panel1.Controls.Add(this.picPoint5);
+            this.panel1.Controls.Add(this.picPoint6);
+            this.panel1.Controls.Add(this.picPoint7);
+            this.panel1.Controls.Add(this.pictureBox33);
+            this.panel1.Controls.Add(this.picPoint8);
+            this.panel1.Location = new System.Drawing.Point(31, 70);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(424, 401);
+            this.panel1.TabIndex = 23;
             // 
-            // pictureBox32
+            // panel2
             // 
-            this.pictureBox32.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox32.Image = global::Marathon_Skills_2015.Properties.Resources.map_icon_start;
-            this.pictureBox32.Location = new System.Drawing.Point(172, 89);
-            this.pictureBox32.Name = "pictureBox32";
-            this.pictureBox32.Size = new System.Drawing.Size(68, 61);
-            this.pictureBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox32.TabIndex = 20;
-            this.pictureBox32.TabStop = false;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.panel2.Controls.Add(this.label46);
+            this.panel2.Controls.Add(this.label47);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 490);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(782, 35);
+            this.panel2.TabIndex = 24;
             // 
-            // pictureBox33
+            // label46
             // 
-            this.pictureBox33.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox33.Image = global::Marathon_Skills_2015.Properties.Resources.map_icon_start;
-            this.pictureBox33.Location = new System.Drawing.Point(47, 250);
-            this.pictureBox33.Name = "pictureBox33";
-            this.pictureBox33.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox33.TabIndex = 21;
-            this.pictureBox33.TabStop = false;
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.White;
+            this.label46.Location = new System.Drawing.Point(186, 8);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(439, 24);
+            this.label46.TabIndex = 1;
+            this.label46.Text = "18 days 8 hours and 17 minutes until the race starts!";
             // 
-            // pictureBox34
+            // label47
             // 
-            this.pictureBox34.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox34.Image = global::Marathon_Skills_2015.Properties.Resources.map_icon_start;
-            this.pictureBox34.Location = new System.Drawing.Point(300, 460);
-            this.pictureBox34.Name = "pictureBox34";
-            this.pictureBox34.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox34.TabIndex = 22;
-            this.pictureBox34.TabStop = false;
-            // 
-            // picPoint7
-            // 
-            this.picPoint7.BackColor = System.Drawing.Color.Transparent;
-            this.picPoint7.Location = new System.Drawing.Point(71, 348);
-            this.picPoint7.Name = "picPoint7";
-            this.picPoint7.Size = new System.Drawing.Size(43, 39);
-            this.picPoint7.TabIndex = 18;
-            this.picPoint7.TabStop = false;
-            this.picPoint7.Click += new System.EventHandler(this.picPoint_Click);
-            // 
-            // picPoint6
-            // 
-            this.picPoint6.BackColor = System.Drawing.Color.Transparent;
-            this.picPoint6.Location = new System.Drawing.Point(113, 419);
-            this.picPoint6.Name = "picPoint6";
-            this.picPoint6.Size = new System.Drawing.Size(43, 39);
-            this.picPoint6.TabIndex = 17;
-            this.picPoint6.TabStop = false;
-            this.picPoint6.Click += new System.EventHandler(this.picPoint_Click);
-            // 
-            // picPoint5
-            // 
-            this.picPoint5.BackColor = System.Drawing.Color.Transparent;
-            this.picPoint5.Location = new System.Drawing.Point(254, 469);
-            this.picPoint5.Name = "picPoint5";
-            this.picPoint5.Size = new System.Drawing.Size(43, 39);
-            this.picPoint5.TabIndex = 16;
-            this.picPoint5.TabStop = false;
-            this.picPoint5.Click += new System.EventHandler(this.picPoint_Click);
-            // 
-            // picPoint4
-            // 
-            this.picPoint4.BackColor = System.Drawing.Color.Transparent;
-            this.picPoint4.Location = new System.Drawing.Point(429, 402);
-            this.picPoint4.Name = "picPoint4";
-            this.picPoint4.Size = new System.Drawing.Size(43, 39);
-            this.picPoint4.TabIndex = 15;
-            this.picPoint4.TabStop = false;
-            this.picPoint4.Click += new System.EventHandler(this.picPoint_Click);
-            // 
-            // picPoint3
-            // 
-            this.picPoint3.BackColor = System.Drawing.Color.Transparent;
-            this.picPoint3.Location = new System.Drawing.Point(324, 304);
-            this.picPoint3.Name = "picPoint3";
-            this.picPoint3.Size = new System.Drawing.Size(43, 39);
-            this.picPoint3.TabIndex = 14;
-            this.picPoint3.TabStop = false;
-            this.picPoint3.Click += new System.EventHandler(this.picPoint_Click);
-            // 
-            // picPoint1
-            // 
-            this.picPoint1.BackColor = System.Drawing.Color.Transparent;
-            this.picPoint1.Location = new System.Drawing.Point(276, 89);
-            this.picPoint1.Name = "picPoint1";
-            this.picPoint1.Size = new System.Drawing.Size(43, 39);
-            this.picPoint1.TabIndex = 12;
-            this.picPoint1.TabStop = false;
-            this.picPoint1.Click += new System.EventHandler(this.picPoint_Click);
-            // 
-            // picPoint8
-            // 
-            this.picPoint8.BackColor = System.Drawing.Color.Transparent;
-            this.picPoint8.Location = new System.Drawing.Point(57, 205);
-            this.picPoint8.Name = "picPoint8";
-            this.picPoint8.Size = new System.Drawing.Size(43, 39);
-            this.picPoint8.TabIndex = 19;
-            this.picPoint8.TabStop = false;
-            this.picPoint8.Click += new System.EventHandler(this.picPoint_Click);
-            // 
-            // picPoint2
-            // 
-            this.picPoint2.BackColor = System.Drawing.Color.Transparent;
-            this.picPoint2.Location = new System.Drawing.Point(324, 216);
-            this.picPoint2.Name = "picPoint2";
-            this.picPoint2.Size = new System.Drawing.Size(43, 39);
-            this.picPoint2.TabIndex = 13;
-            this.picPoint2.TabStop = false;
-            this.picPoint2.Click += new System.EventHandler(this.picPoint_Click);
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(369, 32);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(41, 13);
+            this.label47.TabIndex = 0;
+            this.label47.Text = "label47";
             // 
             // Interactive_Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(782, 550);
-            this.Controls.Add(this.pictureBox34);
-            this.Controls.Add(this.pictureBox33);
-            this.Controls.Add(this.pictureBox32);
-            this.Controls.Add(this.picPoint8);
-            this.Controls.Add(this.picPoint7);
-            this.Controls.Add(this.picPoint6);
-            this.Controls.Add(this.picPoint5);
-            this.Controls.Add(this.picPoint4);
-            this.Controls.Add(this.picPoint3);
-            this.Controls.Add(this.picPoint2);
-            this.Controls.Add(this.picPoint1);
+            this.ClientSize = new System.Drawing.Size(782, 525);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelCheck8);
             this.Controls.Add(this.panelCheck7);
             this.Controls.Add(this.panelCheck6);
@@ -1505,7 +1553,6 @@
             this.Controls.Add(this.panelCheck3);
             this.Controls.Add(this.panelCheck2);
             this.Controls.Add(this.panelCheck1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PainelSuperior);
             this.Name = "Interactive_Map";
             this.Text = "Interactive_Map";
@@ -1527,6 +1574,17 @@
             this.panelCheck7.PerformLayout();
             this.panelCheck8.ResumeLayout(false);
             this.panelCheck8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPoint1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
@@ -1558,18 +1616,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDrink)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPoint2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1579,7 +1628,6 @@
         private System.Windows.Forms.Panel PainelSuperior;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblMarathon;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelCheck1;
         private System.Windows.Forms.Button btnExitCheck1;
         private System.Windows.Forms.Label label2;
@@ -1685,5 +1733,9 @@
         private System.Windows.Forms.PictureBox picPoint1;
         private System.Windows.Forms.PictureBox picPoint8;
         private System.Windows.Forms.PictureBox picPoint2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
     }
 }
