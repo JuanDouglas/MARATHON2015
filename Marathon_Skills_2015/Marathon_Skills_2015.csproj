@@ -106,83 +106,75 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data_Folder\Charity.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Country.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\C_Event.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\C_EventType.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\C_Role.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\C_User.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data_Folder\DBMarathon.Context.cs">
+    <Compile Include="Data_Folder\DBScheme.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBMarathon.Context.tt</DependentUpon>
+      <DependentUpon>DBScheme.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data_Folder\DBMarathon.cs">
+    <Compile Include="Data_Folder\DBScheme.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data_Folder\DBMarathon.Designer.cs">
+    <Compile Include="Data_Folder\DBScheme.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBMarathon.edmx</DependentUpon>
+      <DependentUpon>DBScheme.edmx</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Gender.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Marathon.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Position.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\RaceKitOption.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Registration.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\RegistrationEvent.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data_Folder\RegistrationStatus.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+    <Compile Include="Data_Folder\RegistrationStatu.cs">
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Runner.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Sponsorship.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data_Folder\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data_Folder\sp_helpdiagrams_Result.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Staff.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data_Folder\sysdiagrams.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Timesheet.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Volunteer.cs">
-      <DependentUpon>DBMarathon.tt</DependentUpon>
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
+    <Compile Include="Exception\Loginexception.cs" />
     <Compile Include="Forms\About_Marathon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,13 +254,13 @@
     <EmbeddedResource Include="Test\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
-    <EntityDeploy Include="Data_Folder\DBMarathon.edmx">
+    <EntityDeploy Include="Data_Folder\DBScheme.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBMarathon.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBScheme.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Data_Folder\DBMarathon.edmx.diagram">
-      <DependentUpon>DBMarathon.edmx</DependentUpon>
+    <None Include="App.Config" />
+    <None Include="Data_Folder\DBScheme.edmx.diagram">
+      <DependentUpon>DBScheme.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -291,15 +283,15 @@
   <ItemGroup>
     <None Include="Resources\Imagem Transparente lisis.png" />
     <None Include="Images\IconsCheckpoint\Anotação 2020-02-12 111443.png" />
-    <Content Include="Data_Folder\DBMarathon.Context.tt">
+    <Content Include="Data_Folder\DBScheme.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBMarathon.Context.cs</LastGenOutput>
-      <DependentUpon>DBMarathon.edmx</DependentUpon>
+      <DependentUpon>DBScheme.edmx</DependentUpon>
+      <LastGenOutput>DBScheme.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Data_Folder\DBMarathon.tt">
+    <Content Include="Data_Folder\DBScheme.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBMarathon.edmx</DependentUpon>
-      <LastGenOutput>DBMarathon.cs</LastGenOutput>
+      <DependentUpon>DBScheme.edmx</DependentUpon>
+      <LastGenOutput>DBScheme.cs</LastGenOutput>
     </Content>
     <Content Include="Images\IconsCheckpoint\map-icon-drinks.png" />
     <Content Include="Images\IconsCheckpoint\map-icon-energy-bars.png" />
@@ -312,5 +304,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

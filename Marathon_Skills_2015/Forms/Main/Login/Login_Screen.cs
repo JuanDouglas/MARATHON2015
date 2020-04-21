@@ -19,18 +19,35 @@ namespace Marathon_Skills_2015.Forms
         {
             InitializeComponent();
         }
-
+        public void Login(string email, string password)
+        {
+            var entities = new Data_Folder.MarathonSkillsEntities();
+            var whereResult = entities.C_User.First(x => x.Email == email);
+            if (whereResult != null)
+            {
+                if (whereResult.C_Password == password)
+                {
+                    new Pos_Login().ShowDialog();
+                }
+                else
+                {
+                    throw new Exception.LoginException("This password or email is incorrect!");
+                }
+            }
+            else
+            {
+                throw new Exception.LoginException("This user does not exist!");
+            }
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtEmail.Text == "test" && txtPassword.Text == "admin")
             {
                 new Test.Test().Show();
             }
-            else {
-                if (true)
-                {
-                    new Pos_Login().ShowDialog();
-                }
+            else
+            {
+                Login(txtEmail.Text,txtPassword.Text);
             }
 
         }
@@ -47,25 +64,59 @@ namespace Marathon_Skills_2015.Forms
             {
                 txtEmail.Text = null;
                 txtPassword.Text = null;
+                txtEmail_TextChanged(null, null);
+                txtPassword_TextChanged(null, null);
             }
-            else {
+            else
+            {
                 btnBack_Click(null, null);
             }
         }
 
         private void txtEmail_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "Enter your email adress") {
-                txtEmail.Text = null;
+            if (txtEmail.Text == "Enter your email adress")
+            {
+                txtEmail.Text = "";
                 txtEmail.ForeColor = System.Drawing.Color.Black;
             }
         }
-        private void txtPassword_Click(object sender, EventArgs e) {
-            if (txtPassword.Text == "Enter your passsword") {
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Enter your passsword")
+            {
                 txtPassword.Text = null;
                 txtPassword.UseSystemPasswordChar = true;
                 txtPassword.ForeColor = System.Drawing.Color.Black;
+                txtPassword.Refresh();
             }
+        }
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (txtEmail.Text == null || txtEmail.Text == "")
+            {
+                txtEmail.Text = "Enter your email adress";
+                txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            }
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == null || txtPassword.Text == "")
+            {
+                txtPassword.Text = "Enter your passsword";
+                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            }
+        }
+        private void txtPassword_TextChanged_1(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == null || txtPassword.Text != "Enter your passsword" || txtPassword.Text == "")
+            {
+                txtPassword.UseSystemPasswordChar = true;
+                txtPassword.ForeColor = System.Drawing.Color.Black;
+            }
+
         }
     }
 }

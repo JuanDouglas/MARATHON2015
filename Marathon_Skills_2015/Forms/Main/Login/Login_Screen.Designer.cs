@@ -140,6 +140,8 @@
             this.txtPassword.Tag = "";
             this.txtPassword.Text = "Enter your passsword";
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged_1);
+            this.txtPassword.Validated += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtEmail
             // 
@@ -151,8 +153,7 @@
             this.txtEmail.TabIndex = 7;
             this.txtEmail.Text = "Enter your email adress";
             this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
-            this.txtEmail.HideSelectionChanged += new System.EventHandler(this.txtEmail_Click);
-            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Click);
+            this.txtEmail.Validated += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // panel1
             // 
@@ -225,7 +226,7 @@
             this.panel2.Size = new System.Drawing.Size(800, 351);
             this.panel2.TabIndex = 11;
             // 
-            // LoginScreen
+            // Login_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -236,7 +237,7 @@
             this.Controls.Add(this.PainelSuperior);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "LoginScreen";
+            this.Name = "Login_Screen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginScreen";
             this.PainelSuperior.ResumeLayout(false);
