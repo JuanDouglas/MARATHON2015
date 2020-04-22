@@ -30,6 +30,7 @@ namespace Marathon_Skills_2015.Data_Folder
         public int CharityId { get; set; }
         public decimal SponsorshipTarget { get; set; }
     
+        public virtual Charity Charity { get; set; }
         public virtual RaceKitOption RaceKitOption { get; set; }
         public virtual RegistrationStatus RegistrationStatus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

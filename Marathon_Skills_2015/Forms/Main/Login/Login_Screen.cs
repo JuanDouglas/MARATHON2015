@@ -10,6 +10,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Windows.Media;
+using System.Threading;
 
 namespace Marathon_Skills_2015.Forms
 {
@@ -22,10 +23,10 @@ namespace Marathon_Skills_2015.Forms
         public void Login(string email, string password)
         {
             var entities = new Data_Folder.MarathonSkillsEntities();
-            var whereResult = entities.C_User.FirstOrDefault(x => x.Email == email);
+            var whereResult = entities.User.FirstOrDefault(x => x.Email == email);
             if (whereResult != null)
             {
-                if (whereResult.C_Password == password)
+                if (whereResult.Password == password)
                 {
                     new Pos_Login().ShowDialog();
                 }
@@ -36,8 +37,15 @@ namespace Marathon_Skills_2015.Forms
             }
             else
             {
-               // throw new Exception.LoginException("This user does not exist!");
+                // throw new Exception.LoginException("This user does not exist!");
             }
+        }
+        private void Loading(object obj) {
+            new Loading_Screen().Show();
+        }
+        private void ExecuteInforeground(object obj)
+        {
+            Login(txtEmail.Text, txtPassword.Text);
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -47,14 +55,15 @@ namespace Marathon_Skills_2015.Forms
             }
             else
             {
-                Login(txtEmail.Text,txtPassword.Text);
+                var thLogin = new Thread(ExecuteInforeground);
+                thLogin.Start();
             }
-
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
             Visible = false;
             new Main_Screen().Show();
+            Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

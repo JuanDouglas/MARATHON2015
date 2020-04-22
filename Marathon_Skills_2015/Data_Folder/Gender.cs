@@ -14,6 +14,15 @@ namespace Marathon_Skills_2015.Data_Folder
     
     public partial class Gender
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Gender()
+        {
+            this.Volunteer = new HashSet<Volunteer>();
+        }
+    
         public string Gender1 { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Volunteer> Volunteer { get; set; }
     }
 }

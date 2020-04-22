@@ -111,18 +111,6 @@
     <Compile Include="Data_Folder\Country.cs">
       <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data_Folder\C_Event.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data_Folder\C_EventType.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data_Folder\C_Role.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data_Folder\C_User.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data_Folder\DBScheme.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,6 +125,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBScheme.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\Event.cs">
+      <DependentUpon>DBScheme.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\EventType.cs">
+      <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Gender.cs">
       <DependentUpon>DBScheme.tt</DependentUpon>
@@ -159,6 +153,9 @@
     <Compile Include="Data_Folder\RegistrationStatus.cs">
       <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data_Folder\Role.cs">
+      <DependentUpon>DBScheme.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data_Folder\Runner.cs">
       <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
@@ -169,6 +166,9 @@
       <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Timesheet.cs">
+      <DependentUpon>DBScheme.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Folder\User.cs">
       <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Data_Folder\Volunteer.cs">
@@ -186,6 +186,12 @@
     </Compile>
     <Compile Include="Forms\Interactive_Map.Designer.cs">
       <DependentUpon>Interactive_Map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Loading_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Loading_Screen.Designer.cs">
+      <DependentUpon>Loading_Screen.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Main\Main_Screen.cs">
       <SubType>Form</SubType>
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Interactive_Map.resx">
       <DependentUpon>Interactive_Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Loading_Screen.resx">
+      <DependentUpon>Loading_Screen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\Main_Screen.resx">
       <DependentUpon>Main_Screen.cs</DependentUpon>
@@ -281,6 +290,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\t7u2rdii5u9n4zyqs2aa.jpg" />
     <None Include="Resources\Imagem Transparente lisis.png" />
     <None Include="Images\IconsCheckpoint\Anotação 2020-02-12 111443.png" />
     <Content Include="Data_Folder\DBScheme.Context.tt">

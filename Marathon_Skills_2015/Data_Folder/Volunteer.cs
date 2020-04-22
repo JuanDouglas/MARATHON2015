@@ -21,5 +21,6 @@ namespace Marathon_Skills_2015.Data_Folder
         public string Gender { get; set; }
     
         public virtual Country Country { get; set; }
+        public virtual Gender Gender1 { get; set; }
     }
 }

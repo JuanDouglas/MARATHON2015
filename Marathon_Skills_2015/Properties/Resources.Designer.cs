@@ -149,5 +149,15 @@ namespace Marathon_Skills_2015.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap t7u2rdii5u9n4zyqs2aa {
+            get {
+                object obj = ResourceManager.GetObject("t7u2rdii5u9n4zyqs2aa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

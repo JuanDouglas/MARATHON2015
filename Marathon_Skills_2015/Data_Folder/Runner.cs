@@ -28,5 +28,8 @@ namespace Marathon_Skills_2015.Data_Folder
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Registration> Registration { get; set; }
+        public virtual User User { get; set; }
+        public virtual User User1 { get; set; }
+        public virtual User User2 { get; set; }
     }
 }
