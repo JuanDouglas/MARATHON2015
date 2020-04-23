@@ -17,8 +17,8 @@ namespace Marathon.API.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Registration()
         {
-            this.RegistrationEvents = new HashSet<RegistrationEvent>();
-            this.Sponsorships = new HashSet<Sponsorship>();
+            this.RegistrationEvent = new HashSet<RegistrationEvent>();
+            this.Sponsorship = new HashSet<Sponsorship>();
         }
     
         public int RegistrationId { get; set; }
@@ -32,11 +32,11 @@ namespace Marathon.API.Models
     
         public virtual Charity Charity { get; set; }
         public virtual RaceKitOption RaceKitOption { get; set; }
-        public virtual RegistrationStatu RegistrationStatu { get; set; }
+        public virtual RegistrationStatus RegistrationStatus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RegistrationEvent> RegistrationEvents { get; set; }
+        public virtual ICollection<RegistrationEvent> RegistrationEvent { get; set; }
         public virtual Runner Runner { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sponsorship> Sponsorships { get; set; }
+        public virtual ICollection<Sponsorship> Sponsorship { get; set; }
     }
 }

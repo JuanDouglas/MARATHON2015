@@ -1,8 +1,8 @@
+using Marathon.API.Areas.HelpPage.ModelDescriptions;
+using Marathon.API.Areas.HelpPage.Models;
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using Marathon.API.Areas.HelpPage.ModelDescriptions;
-using Marathon.API.Areas.HelpPage.Models;
 
 namespace Marathon.API.Areas.HelpPage.Controllers
 {

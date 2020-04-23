@@ -1,14 +1,12 @@
-﻿using System;
+﻿using Marathon.API.Models;
+using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Marathon.API.Models;
 
 namespace Marathon.API.Controllers
 {
@@ -21,16 +19,25 @@ namespace Marathon.API.Controllers
         {
             return Unauthorized(new System.Net.Http.Headers.AuthenticationHeaderValue("Help", "is area and inaccessible to your level"));
         }
-        public IList<UserModel> GetUsers(string voceEUmIdiota)
+        public IHttpActionResult GetUsers(string voceEUmIdiota)
         {
-            if (voceEUmIdiota=="euSouODouglas") {
-                var list = new List<UserModel>();
-                foreach (var item in db.Users.ToList()) {
-                    list.Add(new UserModel(item));
+            try
+            {
+                if (voceEUmIdiota == "euSouODouglas")
+                {
+                    var list = new List<UserModel>();
+                    foreach (var item in db.User.ToList())
+                    {
+                        list.Add(new UserModel(item));
+                    }
+                    return Ok(list);
                 }
-                return list;
+                return null;
             }
-            return null;
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
         }
 
         // GET: api/Users/5
@@ -40,7 +47,7 @@ namespace Marathon.API.Controllers
             try
             {
                 var userEmail = ActiveLogins.ActiveTokens.FirstOrDefault(item => item.TokenGuid == Guid.Parse(token)).Email;
-                User user = db.Users.FirstOrDefault(usert => usert.Email == userEmail);
+                User user = db.User.FirstOrDefault(usert => usert.Email == userEmail);
                 if (user == null)
                 {
                     return NotFound();
@@ -51,7 +58,7 @@ namespace Marathon.API.Controllers
                 }
                 var Role = new RoleModel(user.Role);
                 var User = new UserModel(user);
-                return Ok(new { User , Role});
+                return Ok(new { User, Role });
             }
             catch (System.FormatException)
             {
@@ -71,7 +78,7 @@ namespace Marathon.API.Controllers
             try
             {
                 var userEmail = ActiveLogins.ActiveTokens.FirstOrDefault(item => item.TokenGuid == Guid.Parse(token)).Email;
-                User user = db.Users.FirstOrDefault(usert => usert.Email == userEmail);
+                User user = db.User.FirstOrDefault(usert => usert.Email == userEmail);
                 if (user == null)
                 {
                     return NotFound();
@@ -84,7 +91,7 @@ namespace Marathon.API.Controllers
                 {
                     return BadRequest(ModelState);
                 }
-                if (user.Email!= userput.Email)
+                if (user.Email != userput.Email)
                 {
                     return BadRequest();
                 }
@@ -115,7 +122,7 @@ namespace Marathon.API.Controllers
             {
                 return BadRequest("This token is invalid or has already expired");
             }
-        
+
         }
 
         // POST: api/Users
@@ -127,7 +134,7 @@ namespace Marathon.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Users.Add(user);
+            db.User.Add(user);
 
             try
             {
@@ -144,8 +151,8 @@ namespace Marathon.API.Controllers
                     throw;
                 }
             }
-
-            return CreatedAtRoute("DefaultApi", new { id = user.Email }, user);
+            user.Password = "this value is private";
+            return CreatedAtRoute("My", new { user.Email }, new UserModel(user));
         }
 
         // DELETE: api/Users/5
@@ -155,7 +162,7 @@ namespace Marathon.API.Controllers
             try
             {
                 var userEmail = ActiveLogins.ActiveTokens.FirstOrDefault(item => item.TokenGuid == Guid.Parse(token)).Email;
-                User user = db.Users.FirstOrDefault(usert => usert.Email == userEmail);
+                User user = db.User.FirstOrDefault(usert => usert.Email == userEmail);
                 if (user == null)
                 {
                     return NotFound();
@@ -165,9 +172,9 @@ namespace Marathon.API.Controllers
                     return Unauthorized(new System.Net.Http.Headers.AuthenticationHeaderValue("Help", "this password is incorrect"));
                 }
 
-                db.Users.Remove(user);
+                db.User.Remove(user);
                 db.SaveChanges();
-                return Ok("This user has been deleted" );
+                return Ok("This user has been deleted");
             }
             catch (System.FormatException)
             {
@@ -191,7 +198,7 @@ namespace Marathon.API.Controllers
 
         private bool UserExists(string id)
         {
-            return db.Users.Count(e => e.Email == id) > 0;
+            return db.User.Count(e => e.Email == id) > 0;
         }
     }
 }

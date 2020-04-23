@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Timers;
 
 namespace Marathon.API.Models
 {
@@ -9,7 +8,7 @@ namespace Marathon.API.Models
         public TimeSpan TokenGeneratedDate { get; private set; }
         public string Email { get; private set; }
         public string Password { get; private set; }
-        public TokenSys(Guid token,string email,string password)
+        public TokenSys(Guid token, string email, string password)
         {
             TokenGuid = token;
             Email = email;

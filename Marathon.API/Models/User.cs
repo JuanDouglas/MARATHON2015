@@ -17,7 +17,7 @@ namespace Marathon.API.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Runners = new HashSet<Runner>();
+            this.Runner = new HashSet<Runner>();
         }
     
         public string Email { get; set; }
@@ -28,6 +28,6 @@ namespace Marathon.API.Models
     
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Runner> Runners { get; set; }
+        public virtual ICollection<Runner> Runner { get; set; }
     }
 }

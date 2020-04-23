@@ -17,7 +17,7 @@ namespace Marathon.API.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Staff()
         {
-            this.Timesheets = new HashSet<Timesheet>();
+            this.Timesheet = new HashSet<Timesheet>();
         }
     
         public int StaffId { get; set; }
@@ -30,6 +30,6 @@ namespace Marathon.API.Models
     
         public virtual Position Position { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Timesheet> Timesheets { get; set; }
+        public virtual ICollection<Timesheet> Timesheet { get; set; }
     }
 }

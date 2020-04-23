@@ -169,6 +169,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Exceptions\TokenException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -219,7 +220,7 @@
     <Compile Include="Models\RegistrationEvent.cs">
       <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RegistrationStatu.cs">
+    <Compile Include="Models\RegistrationStatus.cs">
       <DependentUpon>DBScheme.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Role.cs">
@@ -264,8 +265,8 @@
     <Content Include="Global.asax" />
     <Content Include="Models\DBScheme.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBScheme.Context.cs</LastGenOutput>
       <DependentUpon>DBScheme.edmx</DependentUpon>
+      <LastGenOutput>DBScheme.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\DBScheme.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -304,6 +305,7 @@
     <Content Include="Models\DBScheme.edmx.diagram">
       <DependentUpon>DBScheme.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

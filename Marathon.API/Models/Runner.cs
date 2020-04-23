@@ -17,7 +17,7 @@ namespace Marathon.API.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Runner()
         {
-            this.Registrations = new HashSet<Registration>();
+            this.Registration = new HashSet<Registration>();
         }
     
         public int RunnerId { get; set; }
@@ -27,7 +27,7 @@ namespace Marathon.API.Models
         public string CountryCode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Registration> Registrations { get; set; }
+        public virtual ICollection<Registration> Registration { get; set; }
         public virtual User User { get; set; }
     }
 }

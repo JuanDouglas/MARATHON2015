@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Timers;
 
 namespace Marathon.API.Models
@@ -27,10 +25,10 @@ namespace Marathon.API.Models
         {
             foreach (var item in ActiveTokens)
             {
-               var now = DateTime.Now;
-               var TimeNow = new TimeSpan(now.Hour, now.Minute, now.Second);
-                   
-                if (TimeNow.Subtract(item.TokenGeneratedDate)>= TokenInterval)
+                var now = DateTime.Now;
+                var TimeNow = new TimeSpan(now.Hour, now.Minute, now.Second);
+
+                if (TimeNow.Subtract(item.TokenGeneratedDate) >= TokenInterval)
                 {
                     ActiveTokens.RemoveAll(Token => Token.TokenGuid == item.TokenGuid);
                 }

@@ -17,8 +17,8 @@ namespace Marathon.API.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Country()
         {
-            this.Marathons = new HashSet<Marathon>();
-            this.Volunteers = new HashSet<Volunteer>();
+            this.Marathon = new HashSet<Marathon>();
+            this.Volunteer = new HashSet<Volunteer>();
         }
     
         public string CountryCode { get; set; }
@@ -26,8 +26,8 @@ namespace Marathon.API.Models
         public string CountryFlag { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Marathon> Marathons { get; set; }
+        public virtual ICollection<Marathon> Marathon { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Volunteer> Volunteers { get; set; }
+        public virtual ICollection<Volunteer> Volunteer { get; set; }
     }
 }

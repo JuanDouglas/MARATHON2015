@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Marathon.API.Controllers
 {
     public class LoginController : ApiController
     {
+        Models.MarathonDBEntities db = new Models.MarathonDBEntities();
         // GET: api/Login
         public IHttpActionResult Get(string email, string password)
         {
-            var result = new Models.MarathonDBEntities().Users.FirstOrDefault(item => item.Email == email);
+            var result = db.User.FirstOrDefault(item => item.Email == email);
             if (result != null)
             {
                 if (result.Password == password)
@@ -39,9 +37,9 @@ namespace Marathon.API.Controllers
                 var testToken = Models.ActiveLogins.ActiveTokens.FirstOrDefault(item => item.TokenGuid == tokenGuid);
                 var now = DateTime.Now;
                 var TimeNow = new TimeSpan(now.Hour, now.Minute, now.Second);
-                var lifeTime = TimeNow.Subtract(testToken.TokenGeneratedDate);
-                var text = "Token lifetime: ";
-                return Ok(new { text, lifeTime });
+                var Token_life_time = TimeNow.Subtract(testToken.TokenGeneratedDate);
+                var Remaining_token_time = new TimeSpan(0, 5, 0).Subtract(Token_life_time);
+                return Ok(new { Token_life_time, Remaining_token_time });
             }
             catch (System.FormatException)
             {

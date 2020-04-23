@@ -17,7 +17,7 @@ namespace Marathon.API.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Event()
         {
-            this.RegistrationEvents = new HashSet<RegistrationEvent>();
+            this.RegistrationEvent = new HashSet<RegistrationEvent>();
         }
     
         public string EventId { get; set; }
@@ -31,6 +31,6 @@ namespace Marathon.API.Models
         public virtual EventType EventType { get; set; }
         public virtual Marathon Marathon { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RegistrationEvent> RegistrationEvents { get; set; }
+        public virtual ICollection<RegistrationEvent> RegistrationEvent { get; set; }
     }
 }

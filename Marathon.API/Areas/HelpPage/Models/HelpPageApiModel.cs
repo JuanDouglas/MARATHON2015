@@ -1,8 +1,8 @@
+using Marathon.API.Areas.HelpPage.ModelDescriptions;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using Marathon.API.Areas.HelpPage.ModelDescriptions;
 
 namespace Marathon.API.Areas.HelpPage.Models
 {
