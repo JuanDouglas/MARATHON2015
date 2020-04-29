@@ -15,7 +15,7 @@ namespace Marathon.API
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            new Models.ActiveLogins(new TimeSpan(0, 2, 30));
+            new Models.ActiveLogins(new TimeSpan(0, 2, 30), new TimeSpan(0,1,0));
             var timer = new System.Timers.Timer(new TimeSpan(0, 0, 1).TotalMilliseconds);
             timer.Elapsed += new System.Timers.ElapsedEventHandler((object sender, System.Timers.ElapsedEventArgs e) =>
             {

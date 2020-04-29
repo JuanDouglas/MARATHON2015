@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Timers;
-
+using System.Text;
+using System.IO;
+using System.Linq;
 namespace Marathon.API.Models
 {
     public class ActiveLogins
     {
-        public static List<TokenSys> ActiveTokens { get; private set; }
+        private static List<TokenSys> ActiveTokens { get; set; }
         private static Timer timer;
         private static TimeSpan CleanTime { get; set; }
-        private static TimeSpan TokenInterval => new TimeSpan(0, 5, 0);
-
-        public ActiveLogins(TimeSpan cleanInterval)
+        public static TimeSpan TokenInterval { get; set; }
+        public ActiveLogins(TimeSpan cleanInterval, TimeSpan tokenTime)
         {
             CleanTime = cleanInterval;
             timer = new Timer(CleanTime.TotalMilliseconds);
@@ -20,18 +21,33 @@ namespace Marathon.API.Models
                 Clean();
             });
             ActiveTokens = new List<TokenSys>();
+            TokenInterval = tokenTime;
         }
         public static void Clean()
         {
-            foreach (var item in ActiveTokens)
+            var colorBack = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("Starting Clean!");
+            Console.ForegroundColor = colorBack;
+            try
             {
-                var now = DateTime.Now;
-                var TimeNow = new TimeSpan(now.Hour, now.Minute, now.Second);
-
-                if (TimeNow.Subtract(item.TokenGeneratedDate) >= TokenInterval)
+                if (ActiveTokens.Count != 0)
                 {
-                    ActiveTokens.RemoveAll(Token => Token.TokenGuid == item.TokenGuid);
+                    foreach (var item in ActiveTokens)
+                    {
+                        var now = DateTime.Now;
+                        var TimeNow = new TimeSpan(now.Hour, now.Minute, now.Second);
+                        Console.WriteLine(item.ToString());
+                        if (TimeNow.Subtract(item.TokenGeneratedDate) >= TokenInterval)
+                        {
+                            ActiveTokens.RemoveAll(Token => Token.TokenGuid == item.TokenGuid);
+                        }
+                    }
                 }
+            }
+            catch (Exception)
+            {
+
             }
         }
         public static void Add(TokenSys token)
@@ -40,11 +56,35 @@ namespace Marathon.API.Models
             {
                 ActiveTokens.RemoveAll(item => item.Email == token.Email || token.TokenGuid == item.TokenGuid);
             }
-            catch (System.NullReferenceException)
+            catch (NullReferenceException)
             {
                 ActiveTokens = new List<TokenSys>();
             }
             ActiveTokens.Add(token);
+        }
+        public static TokenSys GetToken(Guid token)
+        {
+            return ActiveTokens.FirstOrDefault(test => test.TokenGuid == token);
+        }
+        public static bool ThisTokenIsValid(Guid token)
+        {
+            var tested = ActiveTokens.FirstOrDefault(test => test.TokenGuid == token);
+            if (tested == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public static bool ThisTokenIsValid(TokenSys token)
+        {
+            return ThisTokenIsValid(token.TokenGuid);
+        }
+        public static bool ThisTokenIsValid(TokenUser token)
+        {
+            return ThisTokenIsValid(token.Token);
         }
     }
 }

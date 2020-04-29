@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marathon_Skills_2015", "Mar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marathon.API", "Marathon.API\Marathon.API.csproj", "{72D56775-4CA0-4A7F-95F9-71949198942E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marathon.API.Tests", "Marathon.API.Tests\Marathon.API.Tests.csproj", "{8FC5BF85-6B2B-4008-9416-3D9D188AFB7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{72D56775-4CA0-4A7F-95F9-71949198942E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72D56775-4CA0-4A7F-95F9-71949198942E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72D56775-4CA0-4A7F-95F9-71949198942E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FC5BF85-6B2B-4008-9416-3D9D188AFB7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC5BF85-6B2B-4008-9416-3D9D188AFB7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC5BF85-6B2B-4008-9416-3D9D188AFB7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC5BF85-6B2B-4008-9416-3D9D188AFB7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

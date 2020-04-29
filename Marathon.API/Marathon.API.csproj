@@ -170,109 +170,136 @@
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Data\Charity.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Country.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Event.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EventType.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Gender.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Marathon.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MarathonLocalContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarathonLocalContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MarathonLocalContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MarathonLocalContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarathonLocalContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MarathonServerContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarathonServerContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MarathonServerContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarathonServerContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MarathonServerContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarathonServerContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Position.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RaceKitOption.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Registration.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RegistrationEvent.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RegistrationStatus.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Role.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Runner.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Sponsorship.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Staff.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Timesheet.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\User.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Volunteer.cs">
+      <DependentUpon>MarathonLocalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\LevelAcess.cs" />
     <Compile Include="Exceptions\TokenException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ActiveLogins.cs" />
-    <Compile Include="Models\Charity.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Country.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBScheme.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBScheme.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBScheme.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBScheme.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBScheme.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Event.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EventType.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Gender.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Marathon.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Position.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RaceKitOption.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Registration.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RegistrationEvent.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RegistrationStatus.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Role.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\JsonHelper.cs" />
     <Compile Include="Models\RoleModel.cs" />
-    <Compile Include="Models\Runner.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Sponsorship.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Staff.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Timesheet.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\TokenSys.cs" />
     <Compile Include="Models\TokenUser.cs" />
-    <Compile Include="Models\User.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\UserModel.cs" />
-    <Compile Include="Models\Volunteer.cs">
-      <DependentUpon>DBScheme.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\MarathonDB.mdf" />
-    <Content Include="App_Data\MarathonDB_log.ldf">
-      <DependentUpon>MarathonDB.mdf</DependentUpon>
+    <Content Include="App_Data\MarathonSkills.mdf" />
+    <Content Include="App_Data\MarathonSkills_log.ldf">
+      <DependentUpon>MarathonSkills.mdf</DependentUpon>
     </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Data\MarathonLocalContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MarathonLocalContext.edmx</DependentUpon>
+      <LastGenOutput>MarathonLocalContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\MarathonLocalContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MarathonLocalContext.edmx</DependentUpon>
+      <LastGenOutput>MarathonLocalContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\MarathonServerContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MarathonServerContext.edmx</DependentUpon>
+      <LastGenOutput>MarathonServerContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\MarathonServerContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MarathonServerContext.edmx</DependentUpon>
+      <LastGenOutput>MarathonServerContext.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\DBScheme.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBScheme.edmx</DependentUpon>
-      <LastGenOutput>DBScheme.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DBScheme.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBScheme.edmx</DependentUpon>
-      <LastGenOutput>DBScheme.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -294,17 +321,24 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Data\MarathonLocalContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MarathonLocalContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Data\MarathonLocalContext.edmx.diagram">
+      <DependentUpon>MarathonLocalContext.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Data\MarathonServerContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MarathonServerContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Data\MarathonServerContext.edmx.diagram">
+      <DependentUpon>MarathonServerContext.edmx</DependentUpon>
+    </Content>
     <None Include="Dockerfile" />
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
-    <EntityDeploy Include="Models\DBScheme.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBScheme.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DBScheme.edmx.diagram">
-      <DependentUpon>DBScheme.edmx</DependentUpon>
-    </Content>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

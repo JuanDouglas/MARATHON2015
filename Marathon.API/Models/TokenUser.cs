@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace Marathon.API.Models
 {
@@ -10,6 +11,10 @@ namespace Marathon.API.Models
         {
             Token = token;
             GeneratedDate = generetedDate;
+        }
+        public override string ToString()
+        {
+            return JsonHelper.FormatJson(JsonConvert.SerializeObject(this));
         }
     }
 }
